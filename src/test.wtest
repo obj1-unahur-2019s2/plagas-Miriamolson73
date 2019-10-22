@@ -1,0 +1,30 @@
+import elementos.*
+import plagas.*
+describe "test plagas"{
+	
+
+	var cuca1=new Cucarachas(poblacion=30,pesoPromedio=8)
+	var mosquito1=new Mosquitos(poblacion=10,pesoPromedio=5)
+	var pulgas1=new Pulgas(poblacion=50,pesoPromedio=7)
+	var garrapatas1=new Garrapatas(poblacion=100,pesoPromedio=10)
+	var hogar1=new Hogar(nivelDeMugre=100,nivelDeConfort=50)
+	var huerta1=new Huerta(capacidadDeProduccion=50,nivelDeProduccion=10)
+	var mascota1=new Mascota(nivelDeSalud=300)
+	
+	 fixture{}
+	
+	
+
+test "cuca" {
+
+	assert.equals(30,cuca1.poblacion())
+	assert.that(garrapatas1.trasmitenEnfermedades())
+	huerta1.efectoAtaque(garrapatas1)
+	assert.equals(20,huerta1.capacidadDeProduccion())
+	assert.equals(120,garrapatas1.poblacion())
+	
+	
+
+}
+
+}
